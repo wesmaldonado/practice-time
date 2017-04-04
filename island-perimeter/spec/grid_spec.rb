@@ -30,4 +30,35 @@ RSpec.describe 'The grid, a digital frontier' do
       [0,1,0,0],
       [1,1,0,0] ]).perimeter).to eq(16)
   end
+
+  it "has perimeter 8" do
+    expect(Grid.new(
+     [[0,0,0,0],
+      [0,1,1,0],
+      [0,1,1,0],
+      [0,0,0,0] ]).perimeter).to eq(8)
+  end
+
+  it "has perimeter 10" do
+    expect(Grid.new(
+     [[0,0,0,1],
+      [0,0,0,1],
+      [0,0,0,1],
+      [0,0,0,1] ]).perimeter).to eq(10)
+  end
+  it "handles there being islands" do 
+    # Not a part of the question but still, one ponders.
+    #expect(Grid.new(
+    # [[1,0,0,1],
+    #  [0,0,0,0],
+    #  [0,0,0,0],
+    #  [0,0,0,0] ]).perimeter).to eq(0)
+  end
+
+  it "has perimeter 0" do
+    expect(Grid.new([[0]]).perimeter).to eq(0)
+  end
+
+
+
 end
