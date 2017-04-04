@@ -8,9 +8,9 @@ class Keyboard
   def words
     [].tap { |res| 
     @considered.each do |word|
-            res << word if word.split('').all?{|letter| @rows[0].include?(letter)}
-            res << word if word.split('').all?{|letter| @rows[1].include?(letter)}
-            res << word if word.split('').all?{|letter| @rows[2].include?(letter)}
+      rows.each do |row|
+        res << word if word.split('').all?{|letter| row.include?(letter)}
+      end
     end
     }
   end
